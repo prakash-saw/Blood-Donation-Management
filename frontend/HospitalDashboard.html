@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeStream | Blood Donation Management</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+</head>
+<body>
+    <header class="header no-print">
+        <div class="container nav-content">
+            <div class="logo">
+                <div>
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-5.5c-.5 1.5-2 3.9-4 5.5s-3 3.5-3 5.5a7 7 0 0 0 7 7Z"/>
+                    </svg>
+                </div>
+                <span>LifeStream</span>
+            </div>
+            <nav class="nav hidden-mobile">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#donationCamps">Donation Camp</a></li>
+                    <li><a href="#requestBlood">Requests</a></li>
+                    <li><a href="#donateBlood">Donate</a></li>
+                    <div id="auth-buttons" class="nav-auth-buttons">
+                        <button class="btn btn-outline">Login</button>
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <modal class="login-role">
+        <div class="auth-container">
+            <div class="auth-image hidden-mobile">
+                <img src="./photo.jpg" alt="Login">
+                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 4rem; color: white;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Welcome Back!</h2>
+                    <p style="font-size: 1.125rem; opacity: 0.8;">"The blood you donate gives someone another chance at life. One day that someone might be a close relative, a friend, a loved one—or even you."</p>
+                </div>
+            </div>
+            <div class="auth-form-wrapper">
+                <div style="max-width: 24rem; width: 100%;">
+                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Login to account</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label">User Role</label>
+                            <select id="login-role" class="form-input">
+                                <option value="donor">Donor</option>
+                                <option value="hospital">Hospital / Blood Bank</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" required class="form-input" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" required class="form-input" placeholder="••••••••">
+                        </div>
+                        <div><a href="">Forget Password?</a></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 0.5rem; padding: 0.75rem;">Sign In</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 1.5rem; color: var(--gray-500); font-size: 0.875rem;">
+                        Don't have an account? <a href="#" onclick="navigateTo('register')" style="color: var(--primary); font-weight: 600;">Register here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </modal> -->
+
+    <!-- <modal class="register-role">
+        <div style="padding: 5rem 0;">
+            <div class="container" style="max-width: 56rem;">
+                <div class="flex" style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <div style="width: 35%; background: var(--primary); padding: 3rem; color: white;">
+                        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem;">Join Us</h2>
+                        <p style="margin-bottom: 2rem; opacity: 0.9;">Sign up and become a part of the lifesavers network.</p>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="flex items-center">
+                                <i data-lucide="check-circle" style="margin-right: 0.75rem;"></i>
+                                <span>Instant Digital Donor Card</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="bell" style="margin-right: 0.75rem;"></i>
+                                <span>Emergency Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex: 1; padding: 3rem;">
+                        <form onsubmit="handleRegister(event)" class="grid grid-2">
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label">Register As</label>
+                                <select class="form-input">
+                                    <option>Donor</option>
+                                    <option>Hospital</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Blood Group</label>
+                                <select class="form-input">
+                                    <option>A+</option><option>O+</option><option>B+</option><option>AB+</option>
+                                    <option>A-</option><option>O-</option><option>B-</option><option>AB-</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="sex">Sex</label>
+                                <input type="radio" id="male" name="sex">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="sex">
+                                <label for="female">Female</label>
+                                <input type="radio" id="others" name="sex">
+                                <label for="others">Others</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" class="form-input">
+                            </div>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="checkbox" >
+                                <label for="checkbox">Terms & Conditions <a href="#"></a></label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="grid-column: span 2; border-radius: 0.5rem; padding: 0.75rem;">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </modal> -->
+
+    <main id="main-content">
+
+    </main>
+
+    <footer class=" no-print">
+        <div class="container grid grid-4">
+            <div>
+                <div class="logo">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-5.5c-.5 1.5-2 3.9-4 5.5s-3 3.5-3 5.5a7 7 0 0 0 7 7Z" style="color: #f43f5e"/>
+                    </svg>
+                    <span>LifeStream</span>
+                </div>
+                <p>Saving lives through a connected network of donors, hospitals, and blood banks.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav-links">
+                    <li><a href="#">Find Donors</a></li>
+                    <li><a href="#">Request Blood</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Support</h4>
+                <ul class="footer-nav-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Newsletter</h4>
+                <div class="flex newsletter-form">
+                    <input type="text" placeholder="Email">
+                    <button class="newsletter-btn">
+                        <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+           &copy; 2026 LifeStream Blood Management.
+        </div>
+    </footer>
+</body>
+</html>
