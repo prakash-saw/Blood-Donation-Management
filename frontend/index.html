@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeStream | Blood Donation Management</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <header class="header no-print">
@@ -33,18 +33,21 @@
         </div>
     </header>
 
-    <!-- <modal class="login-role">
+    <modal class="login-model" id="open-login-model">
+                
         <div class="auth-container">
+            <button class="close-btn">&times;</button>
+        
             <div class="auth-image hidden-mobile">
-                <img src="./photo.jpg" alt="Login">
-                <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 4rem; color: white;">
-                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Welcome Back!</h2>
-                    <p style="font-size: 1.125rem; opacity: 0.8;">"The blood you donate gives someone another chance at life. One day that someone might be a close relative, a friend, a loved one—or even you."</p>
+                <img src="images/hero.jpeg" alt="Login">
+                <div class="login-head">
+                    <h2 >Welcome Back!</h2>
+                    <p >"The blood you donate gives someone another chance at life. One day that someone might be a close relative, a friend, a loved one—or even you."</p>
                 </div>
             </div>
             <div class="auth-form-wrapper">
-                <div style="max-width: 24rem; width: 100%;">
-                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Login to account</h2>
+                <div>
+                    <h2>Login to account</h2>
                     <form onsubmit="handleLogin(event)">
                         <div class="form-group">
                             <label class="form-label">User Role</label>
@@ -62,17 +65,18 @@
                             <input type="password" required class="form-input" placeholder="••••••••">
                         </div>
                         <div><a href="">Forget Password?</a></div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 0.5rem; padding: 0.75rem;">Sign In</button>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
                     </form>
-                    <p style="text-align: center; margin-top: 1.5rem; color: var(--gray-500); font-size: 0.875rem;">
+                    <p>
                         Don't have an account? <a href="#" onclick="navigateTo('register')" style="color: var(--primary); font-weight: 600;">Register here</a>
                     </p>
                 </div>
             </div>
-        </div>
-    </modal> -->
 
-    <!-- <modal class="register-role">
+        </div>
+    </modal>
+
+    <modal class="register-model" id="open-register-model">
         <div style="padding: 5rem 0;">
             <div class="container" style="max-width: 56rem;">
                 <div class="flex" style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-lg);">
@@ -137,11 +141,11 @@
                 </div>
             </div>
         </div>
-    </modal> -->
+    </modal>
 
     <main id="main-content" >
         <section class="hero">
-            <img src="./photo.jpg" alt="Hero">
+            <img src="images/hero.jpeg" alt="Hero">
                 <div class="container hero-content">
                     <h1>Donate Blood,<br><span>Save a Life.</span></h1>
                     <p>Your single donation can save up to three lives. Join our community of heroes today and make a real difference.</p>
