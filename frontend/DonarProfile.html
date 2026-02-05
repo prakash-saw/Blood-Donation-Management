@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeStream | Blood Donation Management</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav no-print">
+        <div class="container nav-content">
+            <div class="logo" onclick="navigateTo('home')" style="cursor:pointer">
+                <div><i data-lucide="droplets"></i></div>
+                <span>LifeStream</span>
+            </div>
+            <div class="flex items-center hidden-mobile" style="gap: 2rem;">
+                <a href="#" onclick="navigateTo('home')">Home</a>
+                <a href="#camps">Donation Camps</a>
+                <a href="#requests">Requests</a>
+                <a href="#donars">Donars</a>
+                <div id="nav-auth-buttons" class="flex items-center" style="gap: 1rem;">
+                    <!-- JS Injected -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" style="padding-top: 4rem; min-height: 80vh;">
+        
+        <div class="container dashboard-container">
+                    <aside class="sidebar">
+                        <div class="card" style="text-align: center;">
+                            <img src="https://ui-avatars.com/api/?name=Prakash+Saw&background=e11d48&color=fff" style="width: 6rem; border-radius: 50%; margin-bottom: 1rem;">
+                            <h3 style="font-weight: 700;">Prakash Saw</h3>
+                            <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Group: O+</p>
+                            <span style="background: var(--primary-light); color: var(--primary); font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 0.25rem; text-transform: uppercase;">Silver Donor</span>
+                        </div>
+                        <div class="sidebar-nav">
+                            <button class="nav-item"><i data-lucide="layout"></i> Overview</button>
+                            <button class="nav-item"><i data-lucide="history"></i> History</button>
+                            <button class="nav-item" onclick="showCertificate()" style="color: var(--primary); font-weight: 600;"><i data-lucide="award"></i> Get Certificate</button>
+                            <button class="nav-item" onclick="handleLogout()" style="color: #ef4444;"><i data-lucide="log-out"></i> Logout</button>
+                        </div>
+                    </aside>
+                    <main class="dashboard-main">
+                        <div class="grid grid-3" style="margin-bottom: 2.5rem;">
+                            <div class="stat-card primary">
+                                <p style="opacity: 0.8; font-size: 0.875rem;">Total Donations</p>
+                                <h2 style="font-size: 2rem;">12 Times</h2>
+                            </div>
+                            <div class="stat-card white">
+                                <p style="color: var(--gray-500); font-size: 0.875rem;">Status</p>
+                                <h2 style="font-size: 1.5rem; color: var(--success);">Ready to Donate</h2>
+                            </div>
+                            <div class="stat-card white">
+                                <p style="color: var(--gray-500); font-size: 0.875rem;">Next Eligibility</p>
+                                <h2 style="font-size: 1.5rem;">March 15, 2026</h2>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <div style="padding: 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; justify-content: space-between; align-items: center;">
+                                <h3 style="font-weight: 700;">Past Donations</h3>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr><th>Date</th><th>Location</th><th>Units</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Oct 12, 2025</td><td>City Blood Bank</td><td>1 Unit</td><td><span style="color: var(--success); font-weight: 600;">Completed</span></td></tr>
+                                    <tr><td>July 05, 2025</td><td>Corporate Mega Camp</td><td>1 Unit</td><td><span style="color: var(--success); font-weight: 600;">Completed</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </main>
+                </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print">
+        <div class="container grid grid-4">
+            <div>
+                <div class="logo" style="color: white; margin-bottom: 1rem;">
+                    <i data-lucide="droplets" style="color: #f43f5e"></i>
+                    <span>LifeStream</span>
+                </div>
+                <p style="color: var(--gray-400); font-size: 0.875rem;">Saving lives through a connected network of donors, hospitals, and blood banks.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+                <ul style="color: var(--gray-400); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>Find Donors</li>
+                    <li>Request Blood</li>
+                    <li>Volunteer</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Support</h4>
+                <ul style="color: var(--gray-400); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>FAQ</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Newsletter</h4>
+                <div class="flex" style="background: var(--gray-800); border-radius: 0.375rem; overflow: hidden;">
+                    <input type="text" placeholder="Email" style="background: transparent; border: none; padding: 0.5rem 1rem; color: white; flex: 1; outline: none;">
+                    <button style="background: var(--primary); padding: 0.5rem 1rem; color: white;"><i data-lucide="send" style="width: 1rem; height: 1rem;"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid var(--gray-800); margin-top: 3rem; padding-top: 2rem; text-align: center; color: var(--gray-500); font-size: 0.875rem;">
+            © 2024 LifeStream Blood Management.
+        </div>
+    </footer>
