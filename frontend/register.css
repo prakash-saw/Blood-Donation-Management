@@ -9,3 +9,27 @@
     z-index: 2000;
     display: none;
 }
+
+.close-btn-register{
+    position: absolute;
+    top:  6%;
+    right: 23%;
+    background-color: transparent;
+    font-size: 1.85rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+    .close-btn-register{
+    position: absolute;
+    top: 19%;
+    right: 22%;
+    background-color: transparent;
+    font-size: 1.85rem;
+    cursor: pointer;
+    }
+}
+
+.register-active{
+    display: flex !important;
+}

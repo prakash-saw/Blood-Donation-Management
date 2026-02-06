@@ -67,3 +67,28 @@
         // }
 
         // window.onload = () => navigateTo('home');
+
+
+const openLoginModel = document.getElementById('open-login-model');
+const closeLoginModel = document.getElementById('close-login-btn');
+const loginModal = document.getElementById('show-login-model');
+
+openLoginModel.addEventListener('click', () => {
+    loginModal.classList.add('login-active');
+});
+
+closeLoginModel.addEventListener('click', () => {
+    loginModal.classList.remove('login-active');
+});
+
+const openRegisterModel = document.getElementById('open-register-model');
+const closeRegisterModel = document.getElementById('close-register-btn');
+const registerModal = document.getElementById('show-register-model');
+
+openRegisterModel.addEventListener('click', () => {
+    registerModal.classList.add('register-active');
+});
+
+closeRegisterModel.addEventListener('click', () => {
+    registerModal.classList.remove('register-active');
+});

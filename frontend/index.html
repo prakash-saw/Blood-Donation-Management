@@ -6,6 +6,7 @@
     <title>LifeStream | Blood Donation Management</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
     <header class="header no-print">
@@ -25,21 +26,20 @@
                     <li><a href="#requestBlood">Requests</a></li>
                     <li><a href="#donateBlood">Donate</a></li>
                     <div id="auth-buttons" class="nav-auth-buttons">
-                        <button class="btn btn-outline">Login</button>
-                        <button class="btn btn-primary">Register</button>
+                        <button class="btn btn-outline" id="open-login-model">Login</button>
+                        <button class="btn btn-primary" id="open-register-model">Register</button>
                     </div>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <modal class="login-model" id="open-login-model">
+    <modal class="login-model" id="show-login-model">
                 
         <div class="auth-container">
-            <button class="close-btn">&times;</button>
+            <button class="close-btn" id="close-login-btn">&times;</button>
         
-            <div class="auth-image hidden-mobile">
-                <img src="images/hero.jpeg" alt="Login">
+            <div class="auth-disc hidden-mobile">
                 <div class="login-head">
                     <h2 >Welcome Back!</h2>
                     <p >"The blood you donate gives someone another chance at life. One day that someone might be a close relative, a friend, a loved one—or even you."</p>
@@ -76,7 +76,7 @@
         </div>
     </modal>
 
-    <modal class="register-model" id="open-register-model">
+     <modal class="register-model" id="show-register-model">
         <div style="padding: 5rem 0;">
             <div class="container" style="max-width: 56rem;">
                 <div class="flex" style="background: white; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-lg);">
@@ -95,6 +95,7 @@
                         </div>
                     </div>
                     <div style="flex: 1; padding: 3rem;">
+                        <button class="close-btn-register" id="close-register-btn">&times;</button>
                         <form onsubmit="handleRegister(event)" class="grid grid-2">
                             <div class="form-group" style="grid-column: span 2;">
                                 <label class="form-label">Register As</label>
@@ -336,7 +337,7 @@
                 <div class="grid grid-2" style="gap: 4rem;">
                 <!-- Contact Info -->
                     <div>
-                        <h4 class="sub-heading">Get in Touch</h4>
+                        <h4 class="sub-heading" style="margin-bottom: 1.5rem;">Get in Touch</h4>
                         <div style="display: flex; flex-direction: column; gap: 2rem;">
                             <div class="flex" style="gap: 1.25rem;">
                                 <div class="contact-icon">
@@ -449,5 +450,6 @@
            &copy; 2026 LifeStream Blood Management.
         </div>
     </footer>
+    <script src="Script.js"></script>
 </body>
 </html>
