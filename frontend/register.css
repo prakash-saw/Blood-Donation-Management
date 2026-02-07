@@ -9,11 +9,14 @@
     z-index: 2000;
     display: none;
 }
-
+#register-div-close{
+    
+    position: relative;
+}
 .close-btn-register{
     position: absolute;
-    top:  6%;
-    right: 23%;
+    top:  2%;
+    right: 5%;
     background-color: transparent;
     font-size: 1.85rem;
     cursor: pointer;
@@ -22,8 +25,8 @@
 @media (max-width: 1440px) {
     .close-btn-register{
     position: absolute;
-    top: 19%;
-    right: 22%;
+    top: 3%;
+    right:5%;
     background-color: transparent;
     font-size: 1.85rem;
     cursor: pointer;
@@ -32,4 +35,38 @@
 
 .register-active{
     display: flex !important;
+}
+
+
+@media (max-width: 768px) {
+
+  /* Form */
+  .register-model form.grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem;
+  }
+
+  .register-model .form-group {
+    width: 70vw !important;
+    height: 5vh;
+  }
+     /* HIDE PINK PANEL  */
+  .register-model .flex > div:first-child {
+    display: none !important;
+    
+  }
+  .close-btn-register{
+    top:1%;
+    right: 3%;
+  }
+ 
+
+
+
+
+
+ 
+
+ 
 }

@@ -92,3 +92,138 @@ openRegisterModel.addEventListener('click', () => {
 closeRegisterModel.addEventListener('click', () => {
     registerModal.classList.remove('register-active');
 });
+
+
+
+// MAKE navigateTo GLOBAL (for inline onclick)
+window.navigateTo = function (type) {
+  if (type === "register") {
+    loginModal.classList.remove("login-active");
+    registerModal.classList.add("register-active");
+    document.body.style.overflow = "hidden";
+  }
+
+  if (type === "login") {
+    registerModal.classList.remove("register-active");
+    loginModal.classList.add("login-active");
+    document.body.style.overflow = "hidden";
+  }
+};
+
+
+// VARIABLES
+
+
+let menu = document.querySelector("#hamburg-menu");
+let popnav = document.querySelector(".hamburg-nav");
+let navLinks = popnav.querySelectorAll("a");
+const video = document.querySelector("#hero-video");
+const heroImg = document.querySelector("#hero-img");
+
+
+
+function hamburgMenu() {
+  menu.addEventListener("click",function(){
+
+   if (window.innerWidth > 768) return;
+
+  // OPEN
+  if (popnav.style.display !== "block") {
+    popnav.style.display = "block";
+
+    gsap.to(popnav, {
+      right: "0%",
+      duration: 0.5,
+      ease: "power3.out"
+    });
+
+    menu.className = "ri-close-line";
+  }
+
+  // CLOSE
+  else {
+    gsap.to(popnav, {
+      right: "-100%",
+      duration: 0.4,
+      ease: "power3.in",
+      onComplete: function() {
+        popnav.style.display = "none";
+      }
+    });
+
+    menu.className = "ri-menu-3-line";
+  }});
+
+
+
+  
+
+navLinks.forEach(function(link) {
+  link.addEventListener("click", function(){
+       gsap.to(popnav, {
+      right: "-100%",
+      duration: 0.4,
+      ease: "power3.in",
+      onComplete: function() {
+        popnav.style.display = "none";
+      }
+    });
+
+    menu.className = "ri-menu-line";
+  });
+
+});
+
+
+}
+
+function banner(){
+  const images = [
+  "https://images.pexels.com/photos/5340269/pexels-photo-5340269.jpeg",
+
+
+  "https://images.pexels.com/photos/5922043/pexels-photo-5922043.jpeg",
+
+
+  "https://images.pexels.com/photos/4040561/pexels-photo-4040561.jpeg"
+];
+
+let index = 0;
+
+setInterval(function() {
+  index = (index + 1) % images.length;
+  heroImg.src = images[index];
+}, 4000);
+
+
+}
+
+function scrollvideo (){
+  ScrollTrigger.create({
+  trigger: "#donateBlood",
+  start: "top 80%",   
+  end: "bottom 30%",
+  // markers:true,
+  
+  onEnter: function() {
+    video.play();
+  },
+
+  onLeave: function() {
+    video.pause();
+  },
+
+  onEnterBack: function() {
+    video.play();
+  },
+
+  onLeaveBack: function() {
+    video.pause();
+  }
+});
+
+}
+
+hamburgMenu();
+banner();
+scrollvideo ();

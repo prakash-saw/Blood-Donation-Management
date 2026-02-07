@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeStream | Blood Donation Management</title>
+
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="register.css">
@@ -26,11 +33,21 @@
                     <li><a href="#requestBlood">Requests</a></li>
                     <li><a href="#donateBlood">Donate</a></li>
                     <div id="auth-buttons" class="nav-auth-buttons">
-                        <button class="btn btn-outline" id="open-login-model">Login</button>
-                        <button class="btn btn-primary" id="open-register-model">Register</button>
+                        <button class="btn btn-outline " id="open-login-model">Login</button>
+                        <button class="btn btn-primary nav-register" id="open-register-model">Register</button>
                     </div>
+                      <i id="hamburg-menu" class="ri-menu-3-line"></i>
                 </ul>
             </nav>
+
+          
+        </div>
+
+        <div class="hamburg-nav">
+         <a href="#">home <i class="ri-arrow-right-up-line"></i></a>
+            <a href="#donationCamps">Donation Camp <i class="ri-arrow-right-up-line"></i></a>
+            <a href="#requestBlood">Requests <i class="ri-arrow-right-up-line"></i></a>    
+            <a href="#donateBlood">Donate <i class="ri-arrow-right-up-line"></i></a>
         </div>
     </header>
 
@@ -65,7 +82,7 @@
                             <input type="password" required class="form-input" placeholder="••••••••">
                         </div>
                         <div><a href="">Forget Password?</a></div>
-                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <button type="submit" class="btn btn-primary login-btn">Sign In</button>
                     </form>
                     <p>
                         Don't have an account? <a href="#" onclick="navigateTo('register')" style="color: var(--primary); font-weight: 600;">Register here</a>
@@ -94,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style="flex: 1; padding: 3rem;">
+                    <div id="register-div-close" style="flex: 1; padding: 3rem;">
                         <button class="close-btn-register" id="close-register-btn">&times;</button>
                         <form onsubmit="handleRegister(event)" class="grid grid-2">
                             <div class="form-group" style="grid-column: span 2;">
@@ -136,7 +153,7 @@
                                 <input type="checkbox" id="checkbox" >
                                 <label for="checkbox">Terms & Conditions <a href="#"></a></label>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="grid-column: span 2; border-radius: 0.5rem; padding: 0.75rem;">Create Account</button>
+                            <button type="submit" class="btn btn-primary" style="grid-column: span 2; border-radius: 999px; padding: 0.75rem;">Create Account</button>
                         </form>
                     </div>
                 </div>
@@ -146,11 +163,11 @@
 
     <main id="main-content" >
         <section class="hero">
-            <img src="images/hero.jpeg" alt="Hero">
+            <img id="hero-img"  src="images/hero.jpeg" alt="Hero">
                 <div class="container hero-content">
                     <h1>Donate Blood,<br><span>Save a Life.</span></h1>
                     <p>Your single donation can save up to three lives. Join our community of heroes today and make a real difference.</p>
-                    <div class="flex" style="gap: 1rem;">
+                    <div class="flex hero-flex-btn" style="gap: 1rem;">
                         <button class="btn btn-primary hero-btn" onclick="navigateTo('register')">Register as Donor</button>
                         <button class="btn btn-outline hero-btn-2" onclick="navigateTo('requestBlood')">Request Blood</button>
                     </div>
@@ -158,7 +175,7 @@
         </section>
 
         <Section class="stats">
-            <div class="container grid grid-4" style="text-align: center;">
+            <div class="container grid grid-4" ">
                  <div>
                     <div class="stat-card">12,450+</div>
                     <div class="stat-name">Registered Donors</div>
@@ -247,7 +264,7 @@
                     </div>
                 </div>    
                 <div class="donate-card">
-                    <img src="photo.jpg" alt="Why Donate Blood" style="width: 100%; border-radius: 8px;">
+                   
                     <div class="donate-card-content">
                         <h4 class="sub-heading">Why Donate Blood?</h4>
                         <div>
@@ -257,11 +274,15 @@
                                 <li>Community Impact: Join a community of donors making a difference.</li>
                                 <li>Free Health Checkup: Get a mini health checkup with every donation.</li>
                             </ul>
-                            <div class="flex" style="gap: 1rem; margin-top: 1.5rem;">
+                            <div class="flex donate-card-btn" style="gap: 1rem; margin-top: 2rem;">
                                 <button onclick="navigateTo('register')" class="btn btn-primary hero-btn">Become a Donor</button>
                                 <button onclick="navigateTo('donationCamps')" class="btn btn-outline hero-btn-2">Find Donation Camps</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="donate-video">
+                        <video id="hero-video" muted  src="./blood-video.mp4"></video>
                     </div>
             </div>  
         </section>
@@ -408,6 +429,8 @@
             </div>
         </section>
     </main>
+
+
     <footer class=" no-print">
         <div class="container grid grid-4">
             <div>
@@ -450,6 +473,23 @@
            &copy; 2026 LifeStream Blood Management.
         </div>
     </footer>
+
+
+
+   
+    <!-- GSAP CDN Links for Animations -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- GSAP SCROLLTRIGGER CDN  -->
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+
+
     <script src="Script.js"></script>
 </body>
 </html>

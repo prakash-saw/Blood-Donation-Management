@@ -13,7 +13,7 @@
 
 .auth-container p{
     margin-top: 2vh;
-    width: 40%;
+    width: 100%;
 }
 
 .close-btn{
@@ -42,6 +42,13 @@
     padding: 0 2rem;
     pointer-events: none;
 }
+.login-head p{
+    width: 40%;
+}
+.login-btn{
+    margin-top: 2vh;
+    width: 20vw;
+}
 
 .auth-form-wrapper{
     background-color: var(--white);
@@ -57,4 +64,101 @@
 
 .login-active{
     display: flex !important;
+}
+
+@media (min-width: 769px) and (max-width: 1124px) {
+
+
+  .auth-container {
+    width: 100%;
+    max-width: 720px;   
+    height: auto;
+    min-height: fit-content;
+    flex-direction: column;
+    border-radius: 1.25rem;
+  }
+
+ 
+  .auth-disc {
+    display: none !important;
+    
+  }
+
+
+
+  .auth-form-wrapper {
+    width: 100% !important;
+    height: 100%;
+    padding: 3vh 3vw;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-form-wrapper > div {
+    width: 100%;
+    max-width: 420px;
+  }
+
+
+ 
+  .auth-form-wrapper button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+ 
+
+
+  /* HIDE PINK PANEL */
+  .auth-disc {
+    display: none !important;
+  }
+
+  .auth-container{
+    background-color: white;
+    width: 90vw;
+    height: auto;
+  }
+
+  .auth-container p {
+    width: 100% !important;
+  }
+
+  /* FORM FULL SCREEN */
+  .auth-form-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 2rem 1.5rem;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .auth-form-wrapper > div {
+    width: 100%;
+    max-width: 520px; 
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    font-size: 1.6rem;
+    z-index: 10;
+  }
+
+  /* Buttons full width */
+  .auth-form-wrapper button {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
