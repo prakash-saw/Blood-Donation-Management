@@ -87,10 +87,12 @@ const registerModal = document.getElementById('show-register-model');
 
 openRegisterModel.addEventListener('click', () => {
     registerModal.classList.add('register-active');
+     document.body.style.overflow = "auto"; 
 });
 
 closeRegisterModel.addEventListener('click', () => {
     registerModal.classList.remove('register-active');
+     document.body.style.overflow = "auto"; 
 });
 
 
@@ -106,7 +108,7 @@ window.navigateTo = function (type) {
   if (type === "login") {
     registerModal.classList.remove("register-active");
     loginModal.classList.add("login-active");
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "auto";
   }
 };
 
